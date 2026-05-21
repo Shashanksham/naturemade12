@@ -118,14 +118,15 @@ export class HomePageSteps {
      */
 
   async productListInSubmenuAtoZ(index1, index2, subheaderTitle) {
-
-    // await this.headerLink1()
     await this.ratingPopup();
     const subMenuItem = this.homePage.productListHeaderAtoZ(index1, index2);
-    await expect(subMenuItem).toBeVisible();
-    await subMenuItem.click({timeout:15000})
+    await expect(subMenuItem).toBeVisible({ timeout: 8000 });
+    await Promise.all([
+      this.page.waitForLoadState('domcontentloaded'),
+      subMenuItem.click({force:true,timeout:6000})
+    ]);    
     await this.ratingPopup();  
-    await expect(this.homePage.kidsVitamin).toBeVisible();
+    await expect(this.homePage.kidsVitamin).toBeVisible({timeout:5000});
     await expect(this.homePage.kidsVitamin).toContainText(subheaderTitle);
   
   }
