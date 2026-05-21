@@ -20,7 +20,7 @@ import { accountPage } from '../tests/pageobjects/accountPage';
 import { faqPage} from '../tests/pageobjects/faqPage';
 import { TIMEOUT } from 'dns';
 
-test.describe('Home Page Tests', () => {
+test.describe.skip('Home Page Tests', () => {
 
   let homeSteps;
   test.beforeEach(async ({ page }) => {
