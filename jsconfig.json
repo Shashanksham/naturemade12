@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "checkJs": true,
+      "strict": false,
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./*"]
+      }
+    },
+    "include": [
+      "tests/**/*.js",
+      "pageobjects/**/*.js",
+      "steps/**/*.js",
+      "constants/**/*.js"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
